@@ -4,16 +4,19 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-// Funções auxiliares (frufru)
+// Funções auxiliares (frufrus)
 int listar_nomes(int opcao){
 	
 	FILE *agenda;
 	agenda = fopen("agenda.txt", "r");
 	
+	// verifica o parametro digitado pelo usuario
 	switch(opcao){
-		int i, qtd_contatos;
+	 	int i, qtd_contatos;
 		char lista_nomes[100];
-		case 0:
+		
+		// lista nomes dos contatos
+		case 0:	
 			printf("----------------------\n");
 			printf("| Lista de contatos: |\n");
 			printf("----------------------\n");
@@ -28,6 +31,7 @@ int listar_nomes(int opcao){
 			fclose(agenda);
 			break;
 		
+		// informa a quantidade de contatos
 		case 1:
 			qtd_contatos = 1;
 			while(fgets(lista_nomes, sizeof(lista_nomes), agenda) != NULL){
@@ -36,6 +40,7 @@ int listar_nomes(int opcao){
 			qtd_contatos = (qtd_contatos - 1)/5;
 			printf("\nQuantidade de contatos: %d/5", qtd_contatos);
 			
+			// se a quantidade de contatos chegar no limite, ele avisa que está cheio
 			if(qtd_contatos == 5){
 				printf(" - Agenda cheia.\n");
 				fclose(agenda);
@@ -52,13 +57,13 @@ int listar_nomes(int opcao){
 int validar_cpf(char cpf[11]){
 	int i;
 	for(i=0; cpf[i] != '\0'; i++){
-		// verifica se cada caractere do cpf eh digito, ignorando a quebra de linha
-		if(!isdigit(cpf[i])){ //&& cpf[i] != '\n'
+		// verifica se cada caractere do cpf eh digito
+		if(!isdigit(cpf[i])){
 			return 0;
 		}
 	}
 	
-	// verifica se o cpf tem 12 caracteres (contando com a quebra de linha)
+	// verifica se o cpf tem 11 caracteres
 	if(strlen(cpf) != 11){
 		return 0;
 	}
@@ -69,13 +74,13 @@ int validar_cpf(char cpf[11]){
 int validar_telefone(char telefone[9]){
 	int i;
 	for(i=0; telefone[i] != '\0'; i++){
-		// verifica se cada caractere do cpf eh digito, ignorando a quebra de linha
-		if(!isdigit(telefone[i])){ //&& cpf[i] != '\n'
+		// verifica se cada caractere do telefone eh digito
+		if(!isdigit(telefone[i])){ 
 			return 0;
 		}
 	}
 	
-	// verifica se o cpf tem 12 caracteres (contando com a quebra de linha)
+	// verifica se o telefone tem 9 caracteres
 	if(strlen(telefone) != 9){
 		return 0;
 	}
@@ -84,8 +89,8 @@ int validar_telefone(char telefone[9]){
 }
 
 
-// Funções principais
 
+// Funções principais
 void listar_contatos(){
 	// abrindo o arquivo txt
 	FILE *agenda;
@@ -216,21 +221,26 @@ void buscar_contato(){
 			
 			i = 1;
 			contato_nao_encontrado = true;
-			
+			// verificado o contato
 			while(fgets(contato, sizeof(contato), agenda) != NULL){
 		
 				switch(i){
 					case 1:
+						// copia o nome do contato independente se é igual ou não
 						strcpy(nome, contato);
 						i++;
 						continue;
 					case 2:
+						//compara se o cpf é igual informado pelo usuario
 						if(strcmp(cpf, contato) == 0){
+							
+							//se o contato for igual, ele imprime o nome e o cpf 
 							contato_nao_encontrado = false;
 							printf("CPF encontrado: \n");
 							printf("-------------------\n");
 							printf("%s%s", nome, cpf);
 							
+							// e logo abaixo imprime as outras informações (email e telefone)
 							for(i = 0; i <= 1; i++){
 								fgets(contato, sizeof(contato), agenda);
 									printf("%s", contato);
@@ -239,6 +249,7 @@ void buscar_contato(){
 							break;
 						}
 						else{
+							// caso o contato não seja igual, ele pula as informações até o proximo nome
 							for(i = 0; i <= 2; i++){
 								fgets(contato, sizeof(contato), agenda);
 							}
@@ -246,6 +257,7 @@ void buscar_contato(){
 						}
 				}
 			}
+			// se o cpf foi não for encontrado, ele entra nessa condição, pois a variavei cpf_nao_encontrado por padrão é true.
 			if(contato_nao_encontrado){
 				system("cls");
 				printf("CPF nao encontrado!\n");
@@ -265,12 +277,14 @@ void adicionar_contato(){
     agenda = fopen("agenda.txt", "a");
 
     char nome[100], email[100], telefone[9], cpf[11];
-
+    
+	// se a agenda não existir ele cria a agenda em 'w'
     if(agenda == NULL){
         fclose(agenda);
         agenda = fopen("agenda.txt", "w");
     }
     
+    // verifica se a agenda está cheia
     if(listar_nomes(1)){
     	printf("\nNao e possivel adicionar novos contatos com a genda cheia.\n\n");
     	fclose(agenda);
@@ -278,6 +292,7 @@ void adicionar_contato(){
     	system("cls");
     	menu();
 	}
+    //se a agenda não estiver cheio ele segue para adicionar
     
 	//nome
     printf("\n\nDigite um nome: ");
@@ -289,6 +304,7 @@ void adicionar_contato(){
     printf("Digite o CPF: ");
     scanf("%s", &cpf);
     
+    // verificando se o cpf foi digitado corretamente 11 digitos e apenas numeros
     while(!validar_cpf(cpf)){
         system("cls");
         printf("CPF INVALIDO!\n");
@@ -303,10 +319,11 @@ void adicionar_contato(){
     scanf("%s", &email);
     system("cls");
     
+	// verificando se o email foi digitado corretamente com '@' e '.'
     while(!(strchr(email, '@') && strchr(email, '.'))){
         system("cls");
         printf("EMAIL INVALIDO!\n");
-        printf("Informe um EMAIL valido (deve conter '@'): ");
+        printf("Informe um EMAIL valido: ");
     	scanf("%s", &email);
     }
 
@@ -321,6 +338,7 @@ void adicionar_contato(){
         scanf("%s", &telefone);
     }
     
+    // Adicionando as informações no arquivo txt
 	fprintf(agenda,"%s",nome);
 	fprintf(agenda,"%s\n",cpf);
 	fprintf(agenda,"%s\n",email);
@@ -336,7 +354,6 @@ void adicionar_contato(){
     system("pause");
     system("cls");
     menu();
-
 
 }
 
@@ -359,6 +376,7 @@ void excluir_contato(){
 		menu();
 	}
 	
+	// Função para ver contatos (apenas nomes)
 	listar_nomes(0);
 	
     char nome[100], email[100], contato[11], cpf[14], linha[255];
@@ -419,7 +437,9 @@ void excluir_contato(){
 		
 		printf("Contato excluido com sucesso!\n\n");
 		
+		// informa a lista atualiaza de contatos (apenas os nomes)
 		listar_nomes(0);
+		// informa a quantidade de contatos atualizado
 		listar_nomes(1);
 		printf("\n\n");
 		
@@ -431,6 +451,7 @@ void excluir_contato(){
     system("pause");
     system("cls");
     menu();
+
 }
 
 
