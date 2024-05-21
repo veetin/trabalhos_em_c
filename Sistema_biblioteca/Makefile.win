@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o
-LINKOBJ  = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o
+OBJ      = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o
+LINKOBJ  = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -35,3 +35,15 @@ biblioteca/area_biblioteca.o: biblioteca/area_biblioteca.c
 
 aluno/area_aluno.o: aluno/area_aluno.c
 	$(CC) -c aluno/area_aluno.c -o aluno/area_aluno.o $(CFLAGS)
+
+biblioteca/adicionar_livro.o: biblioteca/adicionar_livro.c
+	$(CC) -c biblioteca/adicionar_livro.c -o biblioteca/adicionar_livro.o $(CFLAGS)
+
+biblioteca/buscar_livro.o: biblioteca/buscar_livro.c
+	$(CC) -c biblioteca/buscar_livro.c -o biblioteca/buscar_livro.o $(CFLAGS)
+
+biblioteca/listar_livros.o: biblioteca/listar_livros.c
+	$(CC) -c biblioteca/listar_livros.c -o biblioteca/listar_livros.o $(CFLAGS)
+
+biblioteca/livros_emprestados.o: biblioteca/livros_emprestados.c
+	$(CC) -c biblioteca/livros_emprestados.c -o biblioteca/livros_emprestados.o $(CFLAGS)
