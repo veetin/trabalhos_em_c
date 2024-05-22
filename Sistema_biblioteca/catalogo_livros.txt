@@ -1,0 +1,15 @@
+nome1
+categoria
+data de lançamento
+alugado
+
+nome2
+categoria
+data de lançamento
+alugado 
+
+naruto
+anime
+05-03-2003
+disponivel
+

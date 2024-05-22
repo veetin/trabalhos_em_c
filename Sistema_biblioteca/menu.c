@@ -5,9 +5,10 @@
 
 void entrar(){
 	int opcao;
-	puts("Entrar como: ");
-	puts("Bibliotecario ( 1 )");
+	puts("Acessar area de: ");
+	puts("Biblioteca ( 1 )");
 	puts("Aluno ( 2 )");
+	puts("Sair ( 0 )");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);
@@ -21,6 +22,11 @@ void entrar(){
 		case 2:
 			menu_aluno();
 			//login_aluno();
+			break;
+		case 0:
+			system("cls");
+			printf("Sistema Encerrado.");
+			exit(1);
 			break;
 		default:
 			printf("opcao invalida!\n", opcao);

@@ -29,7 +29,11 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
+<<<<<<< HEAD
 UnitCount=17
+=======
+UnitCount=15
+>>>>>>> biblioteca
 
 [VersionInfo]
 Major=1
@@ -200,6 +204,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+<<<<<<< HEAD
 [Unit16]
 FileName=aluno\cadastrar_aluno.h
 CompileCpp=0
@@ -220,3 +225,5 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+=======
+>>>>>>> biblioteca

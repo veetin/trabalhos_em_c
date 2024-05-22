@@ -1,15 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "listar_livros.h"
+#include "adicionar_livro.h"
+#include "buscar_livro.h"
+#include "livros_emprestados.h"
+
 
 void menu_biblioteca(){
 	int opcao;
 	
 	printf("\nMenu:\n");
 	printf("Cadastrar livro - ( 1 )\n");
-	printf("Listar livros - ( 2 )\n");
+	printf("Listar todos os livros - ( 2 )\n");
 	printf("Buscar por livros - ( 3 )\n");
 	printf("Listar livros emprestados - ( 4 )\n");
-	printf("Sair - ( 0 )\n");
+	printf("Voltar - ( 0 )\n");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);
@@ -19,22 +24,21 @@ void menu_biblioteca(){
 	
 	switch(opcao){
 		case 1:
-			//cadastrar_livros();
+			adicionar_livro();
 			break;
-		
 		case 2:
-			//listar_livros();
+			listar_livros();
 			break;
 		case 3:
-			//adicionar_contato();
+			buscar_livro();
 			break;
 		case 4:
-			//buscar_livros()
+			livros_emprestados();
 			break;
 		case 0:
 			system("cls");
-			printf("Sistema Encerrado.");
-			exit(1);
-			break;	
+			entrar();
+			break;
+			
 	}
 }
