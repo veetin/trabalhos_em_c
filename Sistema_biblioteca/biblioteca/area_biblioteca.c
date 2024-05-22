@@ -14,7 +14,7 @@ void menu_biblioteca(){
 	printf("Listar todos os livros - ( 2 )\n");
 	printf("Buscar por livros - ( 3 )\n");
 	printf("Listar livros emprestados - ( 4 )\n");
-	printf("Sair - ( 0 )\n");
+	printf("Voltar - ( 0 )\n");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);
@@ -37,8 +37,8 @@ void menu_biblioteca(){
 			break;
 		case 0:
 			system("cls");
-			printf("Sistema Encerrado.");
-			exit(1);
-			break;	
+			entrar();
+			break;
+			
 	}
 }
