@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=13
+UnitCount=15
 
 [VersionInfo]
 Major=1
@@ -172,6 +172,26 @@ BuildCmd=
 
 [Unit9]
 FileName=biblioteca\adicionar_livro.h
+CompileCpp=0
+Folder=biblioteca
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit14]
+FileName=biblioteca\livros_emprestados.c
+CompileCpp=0
+Folder=biblioteca
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit15]
+FileName=biblioteca\livros_emprestados.h
 CompileCpp=0
 Folder=biblioteca
 Compile=1
