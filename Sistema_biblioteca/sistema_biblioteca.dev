@@ -32,7 +32,7 @@ CompilerSettings=0000000000000000000000000
 <<<<<<< HEAD
 UnitCount=17
 =======
-UnitCount=15
+UnitCount=19
 >>>>>>> biblioteca
 
 [VersionInfo]
@@ -203,9 +203,9 @@ Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
-
 <<<<<<< HEAD
-[Unit16]
+
+[Unit17]
 FileName=aluno\cadastrar_aluno.h
 CompileCpp=0
 Folder=aluno
@@ -214,8 +214,20 @@ Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+=======
+>>>>>>> biblioteca
 
-[Unit17]
+[Unit18]
+FileName=aluno\listar_alunos.h
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit16]
 FileName=aluno\cadastrar_aluno.c
 CompileCpp=0
 Folder=aluno
@@ -225,5 +237,13 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-=======
->>>>>>> biblioteca
+[Unit19]
+FileName=aluno\listar_alunos.c
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
