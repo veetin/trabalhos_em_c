@@ -17,7 +17,7 @@ void listar_alunos(){
 		menu_aluno();		
 	}
 	
-	// listando contatos
+	// listando alunos
 	system("cls");
 	printf("\nListando alunos...\n\n");
 	
@@ -33,9 +33,9 @@ void listar_alunos(){
 		i++;
 	}
 	
-	// fecha a agenda e volta para o menu
+	// fecha o alunos.txt e volta para o menu
 	fclose(alunos);
-	printf("\n");
+	
 	system("pause");
 	system("cls");
 	menu_aluno();	

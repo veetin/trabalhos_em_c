@@ -34,7 +34,11 @@ void livros_emprestados(){
 		
 	}
 	
-	fclose(catalogo_livros);	
+	fclose(catalogo_livros);
+	
+	system("pause");
+    system("cls");
+    menu_biblioteca();	
 		
 }
 
