@@ -178,7 +178,6 @@ void emprestimo_livro(){
 			fgets(linha, sizeof(linha), catalogo_livros);
 		}
 	}
-	printf("%s%s%s%s", livro, categoria, lancamento, situacao);
 	
 	fprintf(catalogo_temp, "%s\n", livro);
 	fprintf(catalogo_temp, "%s", categoria);
