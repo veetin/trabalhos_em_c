@@ -140,35 +140,64 @@ void emprestimo_livro(){
 	catalogo_temp = fopen("catalogo_temp.txt", "w");
 	
 	int i;
+	strtok(livro, "\n");
 	
-	while(fgets(linha, sizeof(linha), catalogo_livros) != NULL){
+	
+	while(fgets(linha, sizeof(linha), livros_emprestados) != NULL){
 		
-		if(!(strcmp(linha, livro))){
-			strcpy(nome_livro, linha);
-			
-			for(i=0; i<=4; i++){
-				fgets(linha, sizeof(linha), catalogo_livros);
+		char livro_temp[100];
+		strcpy(livro_temp, linha);
+		strtok(livro_temp, "\n");
+		
+		if(strcmp(livro_temp, livro) == 0){
+    		// pula as linhas com os dados do contato
+			for(i = 0; i<=3; i++){
+				fgets(livro_temp, sizeof(livro_temp), catalogo_livros);
 				switch(i){
 					case 0:
-						strcpy(categoria, linha);
+						strcpy(categoria, livro_temp);
 						break;
 					case 1:
-						strcpy(lancamento, linha);
+						strcpy(lancamento, livro_temp);
 						break;
 				}
+				
 			}
+    	}
+    	else{
+			// copia cada contato não encontrado para o arquivo agenda_temp
+			fputs(linha, catalogo_temp);
+			
+			// coloca as linhas com os dados do contato no arquivo agenda_temp
+			for(i = 0; i<=2; i++){
+				fgets(linha, sizeof(linha), catalogo_livros);
+				fputs(linha, catalogo_temp);
+				
+			}
+			fputs("\n", catalogo_temp);
+			fgets(linha, sizeof(linha), catalogo_livros);
 		}
-		
-		//strtok(linha, "\n");
-		fputs(linha, catalogo_temp);
 	}
+	printf("%s%s%s%s", livro, categoria, lancamento, situacao);
 	
+	fprintf(catalogo_temp, "%s\n", livro);
+	fprintf(catalogo_temp, "%s", categoria);
+	fprintf(catalogo_temp, "%s", lancamento);
+	fprintf(catalogo_temp, "%s\n\n", situacao);
+	
+	fclose(catalogo_livros);	
 	fclose(catalogo_temp);
-	fclose(catalogo_livros);
 	
-	printf("%s%s%s%s", nome_livro, categoria, lancamento, situacao);
+	// exclui arquivo original
+	remove("catalogo_livros.txt");
 	
+	// renomeia o arquivo temp para se tornar o principal
+	rename("catalogo_temp.txt", "catalogo_livros.txt");
 	
+	printf("Livro '%s' foi emprestado para '%s'", livro, strtok(aluno, "\n"));
+
+	printf("\n\n");
+		
 	system("pause");
     system("cls");
     menu_aluno();
