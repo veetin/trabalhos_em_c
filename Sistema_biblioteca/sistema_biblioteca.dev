@@ -32,7 +32,7 @@ CompilerSettings=0000000000000000000000000
 <<<<<<< HEAD
 UnitCount=17
 =======
-UnitCount=19
+UnitCount=23
 >>>>>>> biblioteca
 
 [VersionInfo]
@@ -239,6 +239,49 @@ BuildCmd=
 
 [Unit19]
 FileName=aluno\listar_alunos.c
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit21]
+FileName=aluno\livros_disponiveis.h
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit20]
+FileName=aluno\livros_disponiveis.c
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit23]
+FileName=aluno\emprestimo_livro.h
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit24]
+FileName=aluno\emprestimo_livro.c
+
+[Unit22]
+FileName=aluno\emprestimo_livro.c
 CompileCpp=0
 Folder=aluno
 Compile=1

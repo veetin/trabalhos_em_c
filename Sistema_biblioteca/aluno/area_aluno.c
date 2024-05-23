@@ -27,7 +27,7 @@ void menu_aluno(){
 			break;
 		
 		case 2:
-			//emprestimo_livro();
+			emprestimo_livro();
 			break;
 		case 3:
 			//devolver_livro();
@@ -36,7 +36,7 @@ void menu_aluno(){
 			listar_alunos();
 			break;
 		case 5:
-			//livros_disponiveis()
+			livros_disponiveis();
 			break;
 		case 0:
 			system("cls");
