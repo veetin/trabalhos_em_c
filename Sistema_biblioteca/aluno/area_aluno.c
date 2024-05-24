@@ -7,13 +7,16 @@
 void menu_aluno(){
 	int opcao;
 	
-	printf("\nMenu:\n");
-	printf("Cadastrar aluno - ( 1 )\n");	
-	printf("Emprestimo de livro - ( 2 )\n");
-	printf("Devolver livro - ( 3 )\n");
-	printf("Listar alunos - ( 4 )\n");
-	printf("Livros disponiveis - ( 5 )\n");
-	printf("Voltar - ( 0 )\n");
+	printf("Menu:\n");
+	printf("1 - Cadastrar aluno\n");	
+	printf("2 - Emprestimo de livro \n");
+	printf("3 - Devolver livro\n");
+	printf("4 - Listar alunos\n");
+	printf("5 - Livros disponiveis\n");
+	printf("\n");
+	
+	printf("0 - Voltar\n");
+	printf("\n");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);
@@ -30,7 +33,7 @@ void menu_aluno(){
 			emprestimo_livro();
 			break;
 		case 3:
-			//devolver_livro();
+			devolver_livro();
 			break;
 		case 4:
 			listar_alunos();

@@ -19,7 +19,10 @@ void listar_alunos(){
 	
 	// listando alunos
 	system("cls");
-	printf("\nListando alunos...\n\n");
+	
+	printf("-------------------\n");
+	printf("| Lista de Alunos |\n");
+	printf("-------------------\n");
 	
 	char lista_alunos[100];
 	int i;

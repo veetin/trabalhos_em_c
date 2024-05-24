@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o aluno/cadastrar_aluno.o aluno/listar_alunos.o aluno/livros_disponiveis.o aluno/emprestimo_livro.o
-LINKOBJ  = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o aluno/cadastrar_aluno.o aluno/listar_alunos.o aluno/livros_disponiveis.o aluno/emprestimo_livro.o
+OBJ      = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o aluno/cadastrar_aluno.o aluno/listar_alunos.o aluno/livros_disponiveis.o aluno/emprestimo_livro.o aluno/devolver_livro.o aluno/verificacoes/verificacoes.o
+LINKOBJ  = main.o menu.o biblioteca/area_biblioteca.o aluno/area_aluno.o biblioteca/adicionar_livro.o biblioteca/buscar_livro.o biblioteca/listar_livros.o biblioteca/livros_emprestados.o aluno/cadastrar_aluno.o aluno/listar_alunos.o aluno/livros_disponiveis.o aluno/emprestimo_livro.o aluno/devolver_livro.o aluno/verificacoes/verificacoes.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -59,3 +59,9 @@ aluno/livros_disponiveis.o: aluno/livros_disponiveis.c
 
 aluno/emprestimo_livro.o: aluno/emprestimo_livro.c
 	$(CC) -c aluno/emprestimo_livro.c -o aluno/emprestimo_livro.o $(CFLAGS)
+
+aluno/devolver_livro.o: aluno/devolver_livro.c
+	$(CC) -c aluno/devolver_livro.c -o aluno/devolver_livro.o $(CFLAGS)
+
+aluno/verificacoes/verificacoes.o: aluno/verificacoes/verificacoes.c
+	$(CC) -c aluno/verificacoes/verificacoes.c -o aluno/verificacoes/verificacoes.o $(CFLAGS)

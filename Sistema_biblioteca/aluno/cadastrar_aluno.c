@@ -37,9 +37,7 @@ int validar_telefone(char telefone[9]){
 	return 1;
 }
 
-
 void cadastrar_aluno(){
-
     FILE *alunos;
     alunos = fopen("alunos.txt", "a");
 
@@ -51,14 +49,13 @@ void cadastrar_aluno(){
         alunos = fopen("alunos.txt", "w");
     }
     
-    
-	//nome
-    printf("\n\nDigite um nome: ");
+	// NOME
+    printf("Digite um nome: ");
     fgets(nome, 100, stdin);
     fflush(stdin);
     system("cls");
 
-	// cpf
+	// CPF
     printf("Digite o CPF: ");
     scanf("%s", &cpf);
     
@@ -72,7 +69,7 @@ void cadastrar_aluno(){
     
     system("cls");
 	
-	//email
+	// EMAIL
     printf("Digite um email: ");
     scanf("%s", &email);
     system("cls");
@@ -85,18 +82,18 @@ void cadastrar_aluno(){
     	scanf("%s", &email);
     }
 
-	// telefone
+	// TELEFONE
     printf("Digite um numero de telefone: ");
     scanf("%s", &telefone);
     
-   while(!validar_telefone(telefone)){
+    while(!validar_telefone(telefone)){
         system("cls");
         printf("NUMERO INVALIDO!\n");
         printf("Informe um NUMERO valido (9 digitos e apenas numeros): ");
         scanf("%s", &telefone);
     }
     
-    // Adicionando as informações no arquivo txt
+    // adicionando as informações no arquivo txt
 	fprintf(alunos,"%s",nome);
 	fprintf(alunos,"%s\n",cpf);
 	fprintf(alunos,"%s\n",email);
@@ -110,7 +107,5 @@ void cadastrar_aluno(){
     system("pause");
     system("cls");
     menu_aluno();
-
 }
-
 

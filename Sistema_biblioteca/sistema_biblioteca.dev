@@ -24,7 +24,7 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=aluno,biblioteca
+Folders=aluno,aluno/verificacoes,biblioteca
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
@@ -32,7 +32,7 @@ CompilerSettings=0000000000000000000000000
 <<<<<<< HEAD
 UnitCount=17
 =======
-UnitCount=23
+UnitCount=27
 >>>>>>> biblioteca
 
 [VersionInfo]
@@ -277,13 +277,50 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit24]
-FileName=aluno\emprestimo_livro.c
-
 [Unit22]
 FileName=aluno\emprestimo_livro.c
 CompileCpp=0
 Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit24]
+FileName=aluno\devolver_livro.c
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit25]
+FileName=aluno\devolver_livro.h
+CompileCpp=0
+Folder=aluno
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit26]
+FileName=aluno\verificacoes\verificacoes.h
+CompileCpp=0
+Folder=aluno/verificacoes
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit27]
+FileName=aluno\verificacoes\verificacoes.c
+CompileCpp=0
+Folder=aluno/verificacoes
 Compile=1
 Link=1
 Priority=1000

@@ -3,11 +3,10 @@
 #include "area_biblioteca.h"
 
 void listar_livros(){
-	
 	FILE *catalogo_livros;
 	catalogo_livros = fopen("catalogo_livros.txt", "r");
 	
- 	int i;
+	int i;
 	char livro[100];
 	
 	if(catalogo_livros == NULL){
@@ -18,16 +17,15 @@ void listar_livros(){
 		menu_biblioteca();
 	}
 	
-	
-	printf("--------------------\n");
-	printf("| Lista de livros: |\n");
-	printf("--------------------\n");
+	printf("-------------------\n");
+	printf("| Lista de Livros |\n");
+	printf("-------------------\n");
 	
 	while(fgets(livro, sizeof(livro), catalogo_livros) != NULL){
 		printf("%s", livro);
-		puts("------------------");
+		printf("------------------\n");
 		
-		for(i = 1; i <= 4; i++){
+		for(i = 0; i <= 3; i++){
 			fgets(livro, sizeof(livro), catalogo_livros);
 		}
 	}
@@ -37,6 +35,5 @@ void listar_livros(){
 	system("pause");
     system("cls");
     menu_biblioteca();
-		
 }
 

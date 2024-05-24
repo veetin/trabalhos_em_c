@@ -9,12 +9,15 @@
 void menu_biblioteca(){
 	int opcao;
 	
-	printf("\nMenu:\n");
-	printf("Cadastrar livro - ( 1 )\n");
-	printf("Listar todos os livros - ( 2 )\n");
-	printf("Buscar por livros - ( 3 )\n");
-	printf("Listar livros emprestados - ( 4 )\n");
-	printf("Voltar - ( 0 )\n");
+	printf("Menu:\n");
+	printf("1 - Cadastrar livro\n");
+	printf("2 - Listar todos os livros\n");
+	printf("3 - Buscar por livros\n");
+	printf("4 - Listar livros emprestados\n");
+	printf("\n");
+	
+	printf("0 - Voltar\n");
+	printf("\n");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);

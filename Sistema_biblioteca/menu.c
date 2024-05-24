@@ -5,10 +5,13 @@
 
 void entrar(){
 	int opcao;
-	puts("Acessar area de: ");
-	puts("Biblioteca ( 1 )");
-	puts("Aluno ( 2 )");
-	puts("Sair ( 0 )");
+	printf("Acessar area de:\n");
+	printf("1 - Biblioteca\n");
+	printf("2 - Aluno\n");
+	printf("\n");
+	
+	printf("0 - Sair\n");
+	printf("\n");
 	
 	printf("Informe a opcao desejada: ");
 	scanf("%d", &opcao);
