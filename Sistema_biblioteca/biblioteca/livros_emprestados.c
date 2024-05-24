@@ -3,7 +3,6 @@
 #include "area_biblioteca.h"
 
 void livros_emprestados(){
-	
 	FILE *catalogo_livros;
 	catalogo_livros = fopen("livros_emprestados.txt", "r");
 	
@@ -18,7 +17,6 @@ void livros_emprestados(){
 		menu_biblioteca();
 	}
 	
-	
 	printf("--------------------------------\n");
 	printf("| Lista de livros emprestados: |\n");
 	printf("--------------------------------\n");
@@ -28,17 +26,15 @@ void livros_emprestados(){
 		for(i = 0; i <= 1; i++){
 			printf("%s", livro);
 			fgets(livro, sizeof(livro), catalogo_livros);
-			
 		}
-		puts("------------------");
 		
+		puts("------------------");
 	}
 	
 	fclose(catalogo_livros);
 	
 	system("pause");
     system("cls");
-    menu_biblioteca();	
-		
+    menu_biblioteca();
 }
 

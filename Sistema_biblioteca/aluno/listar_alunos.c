@@ -8,8 +8,7 @@ void listar_alunos(){
 	FILE *alunos;
 	alunos = fopen("alunos.txt", "r");
 	
-	// Verificando se o arquivo existe.
-	
+	// verificando se o arquivo existe
 	if(alunos == NULL){
 		system("cls"); 
 		printf("\nVoce nao possui alunos cadastrados!\n\n");

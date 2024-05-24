@@ -4,7 +4,6 @@
 #include "area_biblioteca.h"
 
 void buscar_livro(){
-	
 	// abrindo arquivo txt
 	FILE *catalogo_livros;
 	catalogo_livros = fopen("catalogo_livros.txt", "r");
@@ -34,7 +33,6 @@ void buscar_livro(){
 	livro_nao_encontrado = true;
 	
 	while(fgets(livro, sizeof(livro), catalogo_livros) != NULL){
-
 		// verificando se o nome digitado pelo usuario e o contato são iguais
 		if(strcmp(nome_livro, livro) == 0 ){
 			livro_nao_encontrado = false;
@@ -49,7 +47,6 @@ void buscar_livro(){
 			}
 			printf("-------------------\n");
 		}
-
 	}
 	
 	// verificnado se a condição contato não encontrado é verdadeira.
@@ -62,5 +59,5 @@ void buscar_livro(){
 	system("pause");
 	system("cls");
 	menu_biblioteca();
-
 }
+

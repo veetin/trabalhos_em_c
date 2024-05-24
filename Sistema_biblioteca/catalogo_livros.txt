@@ -1,7 +1,7 @@
 naruto
 anime
 05-03-2003
-disponivel
+emprestado
 
 perdido em marte
 ficcao cientifica
@@ -11,5 +11,5 @@ disponivel
 hellboy
 acao
 08-09-1998
-emprestado
+disponivel
 

@@ -11,7 +11,6 @@ void emprestimo_livro(){
 	fgets(aluno, sizeof(aluno), stdin);
 	fflush(stdin);
 	system("cls");
-	//situacao = situacao_aluno(aluno);
 	
 	if(validar_aluno(aluno)){
 		system("pause");

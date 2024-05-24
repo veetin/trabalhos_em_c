@@ -28,7 +28,6 @@ void menu_aluno(){
 		case 1:
 			cadastrar_aluno();
 			break;
-		
 		case 2:
 			emprestimo_livro();
 			break;

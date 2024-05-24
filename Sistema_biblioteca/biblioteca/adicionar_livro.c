@@ -3,7 +3,6 @@
 #include "area_biblioteca.h"
 
 void adicionar_livro(){
-
     FILE *catalogo_livros;
     catalogo_livros = fopen("catalogo_livros.txt", "a");
 
@@ -15,7 +14,7 @@ void adicionar_livro(){
         catalogo_livros = fopen("catalogo_livros.txt", "w");
     }
 
-	//nome do livro
+	// nome do livro
     printf("Nome do livro: ");
     fgets(nome, 100, stdin);
     fflush(stdin);
@@ -27,12 +26,12 @@ void adicionar_livro(){
     fflush(stdin);
     system("cls");
 	
-	//data de lancamento
+	// data de lancamento
     printf("Data de lancamento -> (dd-mm-aaaa): ");
     scanf("%s", &data_lancamento);
     system("cls");
     
-    // Adicionando as informações no arquivo txt
+    // adicionando as informações no arquivo txt
 	fprintf(catalogo_livros,"%s",nome);
 	fprintf(catalogo_livros,"%s",categoria);
 	fprintf(catalogo_livros,"%s\n",data_lancamento);
@@ -46,5 +45,5 @@ void adicionar_livro(){
     system("pause");
     system("cls");
     menu_biblioteca();
-
 }
+

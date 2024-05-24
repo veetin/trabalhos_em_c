@@ -20,11 +20,9 @@ void entrar(){
 	switch(opcao){
 		case 1:
 			menu_biblioteca();
-			//login_biblioteca();
 			break;
 		case 2:
 			menu_aluno();
-			//login_aluno();
 			break;
 		case 0:
 			system("cls");

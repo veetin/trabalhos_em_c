@@ -5,7 +5,6 @@
 #include "buscar_livro.h"
 #include "livros_emprestados.h"
 
-
 void menu_biblioteca(){
 	int opcao;
 	
@@ -41,7 +40,7 @@ void menu_biblioteca(){
 		case 0:
 			system("cls");
 			entrar();
-			break;
-			
+			break;	
 	}
 }
+

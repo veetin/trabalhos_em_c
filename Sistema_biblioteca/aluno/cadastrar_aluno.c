@@ -86,6 +86,7 @@ void cadastrar_aluno(){
     printf("Digite um numero de telefone: ");
     scanf("%s", &telefone);
     
+    // verificando se o telefone foi digitado corretamente 9 digitos e apenas numeros
     while(!validar_telefone(telefone)){
         system("cls");
         printf("NUMERO INVALIDO!\n");
