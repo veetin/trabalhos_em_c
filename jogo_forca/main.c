@@ -3,7 +3,7 @@
 #include "jogar/jogar.h"
 
 int main() {
-	jogar();
+	menu();
 	
 	return 0;
 }
