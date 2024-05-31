@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void tabuleiro(int opcao){
 	switch(opcao){
 		case 1:
@@ -66,3 +65,4 @@ void tabuleiro(int opcao){
 			break;		
 	}
 }
+
