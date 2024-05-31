@@ -13,7 +13,7 @@ void sortear_palavra(char palavra[100]){
 
 	qtd_palavras = 1;
 	
-	//Conta a quantidade de palavras
+	// conta a quantidade de palavras
 	while(fgets(linha, sizeof(linha), lista_palavras) != NULL){
 		qtd_palavras++;
 	}
@@ -38,6 +38,5 @@ void sortear_palavra(char palavra[100]){
 	strcpy(palavra, linha);
 	
 	fclose(lista_palavras);
-	
 }
-	
+

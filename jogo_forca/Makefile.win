@@ -4,11 +4,11 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o jogar/jogar.o menu/menu.o sortear_palavra/sortear_palavra.o tabuleiro/tabuleiro.o verificar_letra/verificar_letra.o infos/infos.o menu_pos_jogo/menu_pos_jogo.o adicionar_palavra/adicionar_palavra.o
-LINKOBJ  = main.o jogar/jogar.o menu/menu.o sortear_palavra/sortear_palavra.o tabuleiro/tabuleiro.o verificar_letra/verificar_letra.o infos/infos.o menu_pos_jogo/menu_pos_jogo.o adicionar_palavra/adicionar_palavra.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+OBJ      = main.o jogar/jogar.o menu/menu.o sortear_palavra/sortear_palavra.o tabuleiro/tabuleiro.o verificar_letra/verificar_letra.o infos/infos.o menu_pos_jogo/menu_pos_jogo.o adicionar_palavra/adicionar_palavra.o helpers/helpers.o
+LINKOBJ  = main.o jogar/jogar.o menu/menu.o sortear_palavra/sortear_palavra.o tabuleiro/tabuleiro.o verificar_letra/verificar_letra.o infos/infos.o menu_pos_jogo/menu_pos_jogo.o adicionar_palavra/adicionar_palavra.o helpers/helpers.o
+LIBS     = -L"C:/Dev-Cpp/MinGW64/lib" -L"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Dev-Cpp/MinGW64/include" -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Dev-Cpp/MinGW64/include" -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = jogo_forca.exe
 CXXFLAGS = $(CXXINCS) -g3
 CFLAGS   = $(INCS) -g3
@@ -50,3 +50,6 @@ menu_pos_jogo/menu_pos_jogo.o: menu_pos_jogo/menu_pos_jogo.c
 
 adicionar_palavra/adicionar_palavra.o: adicionar_palavra/adicionar_palavra.c
 	$(CC) -c adicionar_palavra/adicionar_palavra.c -o adicionar_palavra/adicionar_palavra.o $(CFLAGS)
+
+helpers/helpers.o: helpers/helpers.c
+	$(CC) -c helpers/helpers.c -o helpers/helpers.o $(CFLAGS)

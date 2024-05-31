@@ -3,8 +3,7 @@
 #include "../jogar/jogar.h"
 #include "../adicionar_palavra/adicionar_palavra.h"
 
-
-void menu_pos_jogo(){
+void menu_pos_jogo() {
 	char opcao;
 	
 	printf("Voce deseja: \n\n");
@@ -19,7 +18,7 @@ void menu_pos_jogo(){
 	
 	system("cls");
 	
-	switch(opcao){
+	switch (opcao) {
 		case '1':
 			jogar();
 			break;
@@ -31,3 +30,4 @@ void menu_pos_jogo(){
 			break;
 	}	
 }
+

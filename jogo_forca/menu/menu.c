@@ -16,8 +16,6 @@ void menu(){
 	fflush(stdin);
 	system("cls");
 	
-	
-
 	switch(opcao){
 		case 1:
 			jogar();
@@ -28,3 +26,4 @@ void menu(){
 			break;
 	}
 }
+
