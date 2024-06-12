@@ -1,0 +1,35 @@
+tarefa 1
+desc 1
+12-06-2024 19:15
+11-12-2024
+Pendente
+sem data
+
+tarefa 2
+desc 2
+12-06-2024 19:15
+11-12-2024
+Pendente
+sem data
+
+tarefa 3
+desc 3
+12-06-2024 19:15
+11-12-2024
+Pendente
+sem data
+
+tarefa 4
+desc 4
+12-06-2024 19:15
+11-12-2024
+Concluida
+10-12-2024
+
+tarefa 5
+desc 5
+12-06-2024 19:19
+13-06-2024
+Pendente
+sem data
+
