@@ -1,7 +1,7 @@
 #ifndef gerenciar_tarefas_h
 #define gerenciar_tarefas_h
 
-void cadastrar_tarefas();
+void cadastrar_tarefa();
 void deletar_tarefa();
 void concluir_tarefa();
 

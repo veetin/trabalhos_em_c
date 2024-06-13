@@ -7,9 +7,10 @@ void listar_tarefas(bool bool_concluidas){
 	FILE *lista_tarefas;
 	lista_tarefas = fopen("lista_tarefas.txt", "r");
 	
+	
 	if(lista_tarefas == NULL){
 	    fclose(lista_tarefas);
-	    printf("Voce nao possui nenhuma tarefa!");
+	    puts("Voce nao possui nenhuma tarefa!");
 	    system("pause");
 	    system("cls");
 	    menu();

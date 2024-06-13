@@ -24,7 +24,7 @@ void menu(){
 
 	switch(opcao){
 		case '1':
-			cadastrar_tarefas();
+			cadastrar_tarefa();
 			break;
 		case '2':
 			listar_tarefas(false);
