@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
-void tarefas_pendentes(){
-	
+void listar_tarefas(bool bool_concluidas){
 	FILE *lista_tarefas;
 	lista_tarefas = fopen("lista_tarefas.txt", "r");
 	
-	char nome[100], descricao[255], data_hora_atual[18], prazo[12], status[27], data_conclusao[12], linha[255], vericacao_status[] = "Pendente";
-	int i;
-	
 	if(lista_tarefas == NULL){
 	    fclose(lista_tarefas);
-	    puts("voce nao possui tarefas pendentes!");
+	    printf("Voce nao possui nenhuma tarefa!");
 	    system("pause");
 	    system("cls");
 	    menu();
     }
+	
+	char nome[100], descricao[255], data_hora_atual[18], prazo[12], status[27], data_conclusao[12], linha[255];
+	int i;
+	bool vazio = true;
     
 	while(fgets(linha, sizeof(linha), lista_tarefas) != NULL){
-		
 		strcpy(nome, linha);
-		for(i = 0; i<4; i++){
+		for(i = 0; i<=4; i++){
 			fgets(linha, sizeof(linha), lista_tarefas);
 			switch(i){
 				case 0:
@@ -36,22 +36,32 @@ void tarefas_pendentes(){
 				case 3:
 					strcpy(status, linha);
 					break;
+				case 4:
+					strcpy(data_conclusao, linha);
+					break;
 			}
 		}
 		
-		if(!(strcmp(strtok(status, "\n"), vericacao_status))){
-			printf("nome: %sdescricao: %sdata/hora de cadastro: %sprazo: %sstatus: %s",nome, descricao, data_hora_atual, prazo, status);
-			puts("\n");
-			
+		if(!(strcmp(strtok(status, "\n"), (bool_concluidas ? "Concluida" : "Pendente")))){
+			vazio = false;
+			printf("Nome: %sDescricao: %sData/hora de cadastro: %sPrazo: %sStatus: %s", nome, descricao, data_hora_atual, prazo, status);
+			if (bool_concluidas) {
+				printf("\nData de conclusao: %s\n", data_conclusao);
+			} else {
+				puts("\n");
+			}
 		}
+		
 		fgets(linha, sizeof(linha), lista_tarefas);
-		for(i = 0; i < 1; i++){
-			fgets(linha, sizeof(linha), lista_tarefas);
-		}
 	}
 	
+	if (vazio) {
+		printf("Voce nao possui tarefas %s!", bool_concluidas ? "concluidas" : "pendentes");
+		puts("\n");
+	}
+	
+    system("pause");
+    system("cls");
+	menu();
 }
 
-void tarefas_concluidas(){
-	puts("listando concluidas");
-}

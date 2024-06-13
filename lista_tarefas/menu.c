@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include "gerenciar_tarefas.h"
 #include "listar_tarefas.h"
@@ -26,10 +27,10 @@ void menu(){
 			cadastrar_tarefas();
 			break;
 		case '2':
-			tarefas_pendentes();
+			listar_tarefas(false);
 			break;
 		case '3':
-			tarefas_concluidas();
+			listar_tarefas(true);
 			break;
 		case '4':
 			deletar_tarefa();
@@ -50,3 +51,4 @@ void menu(){
 			menu();
 	} 
 }
+
