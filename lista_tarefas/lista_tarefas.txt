@@ -1,27 +1,28 @@
+tarefa 3
+desc 3
+12-06-2024 19:15
+11-12-2024
+Finalizada dentro do prazo
+13-06-2024 as 22:09h
+
 tarefa 6
 desc 6
-12-06-2024 19:19
-13-06-2024
-Concluida
-10-12-2024 20:19
+12-06-2024 19:15
+10-06-2024
+Finalizada com atraso
+13-06-2024 as 22:25h
 
-tarefa 7
-desc 7
-12-06-2024 19:19
-13-06-2024
+tarefa 10
+desc 10
+13-6-2024 22:26
+19-06-2024
 Pendente
 sem data
 
 tarefa 8
 desc 8
-12-06-2024 19:19
-13-06-2024
+13-6-2024 22:53
+10-07-2024
 Pendente
 sem data
 
-tarefa 9
-desc 9
-12-06-2024 19:19
-13-06-2024
-Concluida
-sem data
