@@ -38,7 +38,7 @@ void menu(){
 		case '5':
 			concluir_tarefa();
 			break;
-		case 0:
+		case '0':
 			system("cls");
 			printf("Sistema Encerrado.");
 			exit(1);
