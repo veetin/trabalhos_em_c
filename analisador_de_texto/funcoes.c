@@ -4,67 +4,53 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-int palavra_impressa(char palavra_texto[], FILE *palavras_unicas) {
-    // retorna para o início do arquivo
-	rewind(palavras_unicas);
+void palavras_diferentes() {
+   FILE *arquivo;
+    arquivo = fopen("texto.txt", "r");
     
-    char palavra[100];
-    
-	// EOF -> End Of File
-    while (fscanf(palavras_unicas, "%s", palavra) != EOF) {
-        if (strcmp(palavra, palavra_texto) == 0) {
-            return 1;
-        }
-    }
-    
-    return 0;
-}
-
-void listar_palavras_diferentes() {
-    char palavra_texto[100];
-    int i;
-    
-    FILE *texto, *palavras_unicas;
-    
-    texto = fopen("texto.txt", "r");
-    if (texto == NULL) {
-        printf("Erro ao abrir o arquivo.\n");
+    // verificando se o arquivo existe
+    if (arquivo == NULL) {
+        puts("Erro ao abrir o arquivo");
         exit(1);
     }
     
-    palavras_unicas = fopen("palavras_unicas.txt", "w");
+    char dicionario[1000][100], palavra[100];
     
-    if (palavras_unicas == NULL) {
-        printf("Erro ao criar o arquivo de palavras unicas.\n");
-        exit(1);
-    }
+    int i, j;
     
-	// EOF -> End Of File
-    // percorre o arquivo lendo palavra por palavra
-    while (fscanf(texto, "%s", palavra_texto) != EOF) {
-        // verifica se a palavra já foi impressa
-        if (!palavra_impressa(palavra_texto, palavras_unicas)) {
-            // imprime a palavra no arquivo de palavras unicas
-			fprintf(palavras_unicas, "%s\n", palavra_texto);
+    i = 0;
+    
+    bool encontrada;
+    
+    while(fscanf(arquivo, "%s", palavra) == 1){
+        encontrada = false;
+        
+        // verifica se a palavra ja esta no dicionário
+        for (j = 0; j < i; j++){
+            if (!(strcmp(dicionario[j], palavra))){
+                encontrada = true;
+                break;
+            }
+        }
+        
+        // se a palavra não foi encontrada, adiciona no dicionário
+        if (!encontrada) {
+            strcpy(dicionario[i], palavra);
+            i++;
         }
     }
     
-    fclose(texto);
-    fclose(palavras_unicas);
+    fclose(arquivo); 
     
-    // Exibe as palavras únicas
-    palavras_unicas = fopen("palavras_unicas.txt", "r");
-    printf("Palavras diferentes no texto:\n");
-    
-    while (fscanf(palavras_unicas, "%s", palavra_texto) != EOF) {
-        printf("%s\n", palavra_texto);
+    // printa as palavras armazenadas no dicionário
+    puts("Palavras Distintas: ");
+	for (j = 0; j < i; j++) {
+        printf("%s\n", dicionario[j]);
     }
     
-    fclose(palavras_unicas);
     
 	system("pause");
 	system("cls");
-    main();
 }
 
 void buscar_palavra() {
@@ -87,7 +73,7 @@ void buscar_palavra() {
     // percorre o arquivo lendo palavra por palavra
     while (fscanf(arquivo, "%s", palavra_busca) != EOF) {
         // verifica se a palavra encontrada eh igual a palavra de busca
-        if (strcmp(palavra, palavra_busca) == 0) {
+        if (!(strcmp(palavra, palavra_busca))) {
             ocorrencias++;
             encontrado = true;
         }
@@ -103,12 +89,12 @@ void buscar_palavra() {
 	
 	system("pause");
 	system("cls");
-	main();
 }
 
 void menu(){
 	FILE *arquivo;
 	char c, opcao, palavra_texto[100], texto[1001];
+	int qtd_char = 0;
 	
 	arquivo = fopen("texto.txt", "r");
 	
@@ -118,12 +104,28 @@ void menu(){
 		exit(1);
 	}
 	
-	// listando palavras
+	// Verificando se o texto possui mais de 1000 caracteres
+	while(c = fgetc(arquivo) != EOF){
+		qtd_char++;
+	}
+	
+	// volto pro inicio do txt
+	rewind(arquivo);
+	
+	// verifica se o texto está no limite de caracteres
+	if(qtd_char > 1000){
+		puts("Texto muito grande");
+		puts("Informe um texto menor de ate 1000 caracteres");
+		exit(1);
+	}
+	
+	// printando o texto na tela
 	// EOF -> End Of File
+	puts("Texto: \n");
 	while((fscanf(arquivo, "%s", palavra_texto)) != EOF){ 
 		printf("%s ", palavra_texto);
 	}
-	
+	puts("\n");
 	fclose(arquivo);	
 	
 	puts("\n");
@@ -139,7 +141,7 @@ void menu(){
 	switch(opcao){
 		case '1':
 			system("cls");
-			listar_palavras_diferentes();
+			palavras_diferentes();
 			break;
 		case '2':
 			system("cls");

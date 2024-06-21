@@ -3,6 +3,4 @@
 
 void menu();
 
-void buscar_palavra(char texto[1001]);
-
 #endif

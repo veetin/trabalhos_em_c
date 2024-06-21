@@ -5,9 +5,6 @@
 #include "funcoes.h"
 
 void main() {
-	puts("Analisador de texto\n");
-	system("pause");
-	system("cls");
 	while (true) {
 		menu();	
 	}
